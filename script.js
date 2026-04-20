@@ -1,6 +1,5 @@
 // ===== COUNTDOWN TIMER =====
-// ИЗМЕНИТЕ ДАТУ СВАДЬБЫ ЗДЕСЬ:
-const weddingDate = new Date('2026-08-15T16:00:00');
+const weddingDate = new Date('2026-07-16T17:00:00');
 
 function updateCountdown() {
     const now = new Date();
@@ -19,10 +18,10 @@ function updateCountdown() {
     const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((diff % (1000 * 60)) / 1000);
 
-    document.getElementById('days').textContent = days;
-    document.getElementById('hours').textContent = hours;
-    document.getElementById('minutes').textContent = minutes;
-    document.getElementById('seconds').textContent = seconds;
+    document.getElementById('days').textContent = String(days).padStart(2, '0');
+    document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+    document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+    document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
 }
 
 updateCountdown();
@@ -39,36 +38,62 @@ const observer = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-// ===== NAV HIDE/SHOW ON SCROLL =====
-let lastScroll = 0;
-const navbar = document.getElementById('navbar');
+// ===== NAV DOTS =====
+const dots = document.querySelectorAll('.nav-dot');
+const sections = [];
 
-window.addEventListener('scroll', () => {
-    const currentScroll = window.pageYOffset;
-    if (currentScroll > lastScroll && currentScroll > 80) {
-        navbar.classList.add('hidden');
-    } else {
-        navbar.classList.remove('hidden');
-    }
-    lastScroll = currentScroll;
+dots.forEach(dot => {
+    const targetId = dot.getAttribute('data-target');
+    const targetEl = document.getElementById(targetId);
+    if (targetEl) sections.push({ dot, el: targetEl });
+
+    dot.addEventListener('click', () => {
+        if (targetEl) targetEl.scrollIntoView({ behavior: 'smooth' });
+    });
 });
 
-// ===== FORM SUBMIT =====
+const dotObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            dots.forEach(d => d.classList.remove('active'));
+            const match = sections.find(s => s.el === entry.target);
+            if (match) match.dot.classList.add('active');
+        }
+    });
+}, { threshold: 0.3 });
+
+sections.forEach(s => dotObserver.observe(s.el));
+
+// ===== FLOATING HEARTS =====
+function createFloatingHearts() {
+    const container = document.getElementById('floatingHearts');
+    const hearts = ['♥', '♡', '❤', '💕'];
+
+    for (let i = 0; i < 15; i++) {
+        const span = document.createElement('span');
+        span.textContent = hearts[Math.floor(Math.random() * hearts.length)];
+        span.style.left = Math.random() * 100 + '%';
+        span.style.animationDuration = (8 + Math.random() * 12) + 's';
+        span.style.animationDelay = (Math.random() * 10) + 's';
+        span.style.fontSize = (0.8 + Math.random() * 1.2) + 'rem';
+        container.appendChild(span);
+    }
+}
+createFloatingHearts();
+
+// ===== FORM =====
 function submitForm(e) {
     e.preventDefault();
     const form = document.getElementById('rsvpForm');
     const formData = new FormData(form);
     const data = Object.fromEntries(formData.entries());
 
-    // Здесь можно подключить отправку данных на сервер
-    // Например через fetch() к Google Forms, Formspree, или свой бэкенд
     console.log('Анкета:', data);
 
     form.style.display = 'none';
     document.getElementById('formSuccess').style.display = 'block';
 }
 
-// ===== SHOW/HIDE GUEST COUNT =====
 document.querySelectorAll('input[name="attendance"]').forEach(radio => {
     radio.addEventListener('change', (e) => {
         const guestGroup = document.getElementById('guestCountGroup');
