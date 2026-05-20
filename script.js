@@ -6,10 +6,10 @@ function updateCountdown() {
     const diff = weddingDate - now;
 
     if (diff <= 0) {
-        document.getElementById('days').textContent = '0';
-        document.getElementById('hours').textContent = '0';
-        document.getElementById('minutes').textContent = '0';
-        document.getElementById('seconds').textContent = '0';
+        document.getElementById('days').textContent = '00';
+        document.getElementById('hours').textContent = '00';
+        document.getElementById('minutes').textContent = '00';
+        document.getElementById('seconds').textContent = '00';
         return;
     }
 
@@ -64,18 +64,19 @@ const dotObserver = new IntersectionObserver((entries) => {
 
 sections.forEach(s => dotObserver.observe(s.el));
 
-// ===== FLOATING HEARTS =====
+// ===== FLOATING DECORATIONS =====
 function createFloatingHearts() {
     const container = document.getElementById('floatingHearts');
-    const hearts = ['♥', '♡', '❤', '💕'];
+    if (!container) return;
+    const items = ['♥', '♡', '❤', '✿', '❀', '🌿', '✦', '♥', '♥', '♡'];
 
-    for (let i = 0; i < 15; i++) {
+    for (let i = 0; i < 20; i++) {
         const span = document.createElement('span');
-        span.textContent = hearts[Math.floor(Math.random() * hearts.length)];
+        span.textContent = items[Math.floor(Math.random() * items.length)];
         span.style.left = Math.random() * 100 + '%';
-        span.style.animationDuration = (8 + Math.random() * 12) + 's';
-        span.style.animationDelay = (Math.random() * 10) + 's';
-        span.style.fontSize = (0.8 + Math.random() * 1.2) + 'rem';
+        span.style.animationDuration = (10 + Math.random() * 15) + 's';
+        span.style.animationDelay = (Math.random() * 12) + 's';
+        span.style.fontSize = (0.7 + Math.random() * 1) + 'rem';
         container.appendChild(span);
     }
 }
