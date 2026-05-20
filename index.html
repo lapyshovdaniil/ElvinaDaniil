@@ -14,8 +14,8 @@
 <!-- NAV DOTS -->
 <div class="nav-dots" id="navDots">
     <button class="nav-dot active" data-target="home" title="Главная"></button>
-    <button class="nav-dot" data-target="calendar" title="Дата"></button>
-    <button class="nav-dot" data-target="location" title="Локация"></button>
+    <button class="nav-dot" data-target="greeting" title="Приветствие"></button>
+    <button class="nav-dot" data-target="photos" title="Фото"></button>
     <button class="nav-dot" data-target="timing" title="Тайминг"></button>
     <button class="nav-dot" data-target="wishes" title="Пожелания"></button>
     <button class="nav-dot" data-target="dresscode" title="Дресс-код"></button>
@@ -27,36 +27,55 @@
 
     <!-- ♥ HERO ♥ -->
     <section class="hero" id="home">
-        <div class="hero-ornament">🕊️</div>
-        <p class="hero-top-text">Приглашение на свадьбу</p>
-
-        <h1 class="hero-names">
-            Даниил
-            <span class="amp">и</span>
-            Эльвина
-        </h1>
-
-        <div class="hero-hearts">
-            <span>♥</span><span>♥</span><span>♥</span><span>♥</span><span>♥</span>
+        <div class="hero-blob blob-1"></div>
+        <div class="hero-blob blob-2"></div>
+        <div class="hero-blob blob-3"></div>
+        <div class="hero-content">
+            <div class="hero-photo-frame reveal">
+                <img src="photos-combined.png" alt="Даниил и Эльвина">
+                <div class="photo-date-badge">16.07.26</div>
+            </div>
+            <h1 class="hero-names reveal">
+                Даниил
+                <span class="amp">+</span>
+                Эльвина
+                <span class="amp">=</span>
+                <span class="heart-big">♥</span>
+            </h1>
         </div>
-
-        <div class="hero-date-badge">16 июля 2026 года</div>
-
-        <p class="hero-subtitle">Мы приглашаем вас разделить наш особенный день</p>
-
-        <div class="scroll-arrow" onclick="document.getElementById('calendar').scrollIntoView({behavior:'smooth'})">↓</div>
+        <div class="scroll-arrow reveal" onclick="document.getElementById('greeting').scrollIntoView({behavior:'smooth'})">↓</div>
     </section>
 
-    <!-- ✦ DIVIDER ✦ -->
-    <div class="doodle-divider">· · ♥ · ·</div>
+    <!-- ♥ GREETING ♥ -->
+    <section class="card card-green" id="greeting">
+        <h2 class="card-title reveal">Дорогие друзья!</h2>
+        <p class="reveal">Мы так вас любим!<br>Поэтому приглашаем стать свидетелями дня рождения нашей семьи, которое состоится:</p>
+        <div class="big-date reveal">16.07.26</div>
+        <div class="divider-hearts">♥ ♥ ♥</div>
+        <h3 class="card-subtitle reveal">Место</h3>
+        <div class="venue-card reveal">
+            <div class="venue-emoji">🏛️</div>
+            <p class="venue-name">«Особняк 21Культ»</p>
+            <p class="venue-addr">г. Москва,<br>Новая Басманная ул., 19с1</p>
+            <a href="https://yandex.ru/maps/?text=Москва+Новая+Басманная+19с1" target="_blank" class="btn">построить маршрут →</a>
+        </div>
+    </section>
+
+    <!-- 📸 PHOTOS -->
+    <section class="card card-cream" id="photos">
+        <h2 class="card-title reveal">Узнали?</h2>
+        <div class="photo-frame-card reveal">
+            <div class="tape tape-l"></div>
+            <div class="tape tape-r"></div>
+            <img src="photos-combined.png" alt="Даниил и Эльвина в детстве">
+        </div>
+        <p class="photo-caption reveal">Время пронеслось незаметно, и у этих двух милых детей скоро свадьба!<br><em>Да-да, мы сами в шоке!</em></p>
+    </section>
 
     <!-- 📅 CALENDAR -->
-    <section class="calendar-section" id="calendar">
-        <div class="section-header reveal">
-            <h2>Запомните дату</h2>
-            <div class="ornament">✦ ♥ ✦</div>
-        </div>
-        <div class="calendar-card reveal">
+    <section class="card card-white" id="calendar">
+        <h2 class="card-title reveal">Запомните дату</h2>
+        <div class="calendar-inner reveal">
             <div class="calendar-month">Июль 2026</div>
             <div class="calendar-grid">
                 <div class="day-name">пн</div>
@@ -66,7 +85,6 @@
                 <div class="day-name">пт</div>
                 <div class="day-name">сб</div>
                 <div class="day-name">вс</div>
-                <!-- Июль 2026: 1 = среда -->
                 <div class="day empty"></div>
                 <div class="day empty"></div>
                 <div class="day">1</div>
@@ -104,155 +122,75 @@
         </div>
     </section>
 
-    <div class="doodle-divider">· · ♥ · ·</div>
-
-    <!-- 📍 LOCATION -->
-    <section class="location-section" id="location">
-        <div class="section-header reveal">
-            <h2>Локация</h2>
-            <div class="ornament">✦ ♥ ✦</div>
-        </div>
-        <div class="location-cards">
-            <div class="location-card reveal">
-                <div class="location-card-body">
-                    <div class="location-card-icon">🏛️</div>
-                    <h3>Особняк 21Культ</h3>
-                    <p>
-                        Торжество пройдёт по адресу:<br>
-                        г. Москва, Новая Басманная ул., 19с1
-                    </p>
-                    <a href="https://yandex.ru/maps/?text=Москва%20Новая%20Басманная%2019с1" target="_blank" class="btn">Построить маршрут</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <div class="doodle-divider">· · ♥ · ·</div>
-
     <!-- ⏰ TIMING -->
-    <section class="timing-section" id="timing">
-        <div class="section-header reveal">
-            <h2>Тайминг</h2>
-            <div class="ornament">✦ ♥ ✦</div>
-        </div>
+    <section class="card card-white" id="timing">
+        <h2 class="card-title reveal">Тайминг</h2>
         <div class="timing-list">
             <div class="timing-item reveal">
                 <div class="timing-time">17:00</div>
-                <div class="timing-dot"></div>
-                <div class="timing-info">
-                    <span class="timing-icon">🥂</span>
-                    <h3>Сбор гостей</h3>
-                    <p>Встречаемся, обнимаемся</p>
-                </div>
+                <div class="timing-desc">сбор гостей</div>
             </div>
             <div class="timing-item reveal">
                 <div class="timing-time">17:30</div>
-                <div class="timing-dot"></div>
-                <div class="timing-info">
-                    <span class="timing-icon">💍</span>
-                    <h3>Церемония</h3>
-                    <p>Главный момент нашего дня</p>
-                </div>
+                <div class="timing-desc">церемония</div>
             </div>
             <div class="timing-item reveal">
                 <div class="timing-time">18:00</div>
-                <div class="timing-dot"></div>
-                <div class="timing-info">
-                    <span class="timing-icon">🍽️</span>
-                    <h3>Банкет</h3>
-                    <p>Время вкусной еды и развлечений</p>
-                </div>
+                <div class="timing-desc">банкет</div>
             </div>
             <div class="timing-item reveal">
                 <div class="timing-time">22:00</div>
-                <div class="timing-dot"></div>
-                <div class="timing-info">
-                    <span class="timing-icon">🎂</span>
-                    <h3>Торт</h3>
-                    <p>Сладкий символ нашей новой жизни</p>
-                </div>
+                <div class="timing-desc">торт</div>
             </div>
         </div>
     </section>
-
-    <div class="doodle-divider">· · ♥ · ·</div>
 
     <!-- 💝 WISHES -->
-    <section class="wishes-section" id="wishes">
-        <div class="section-header reveal">
-            <h2>Пожелания</h2>
-            <div class="ornament">✦ ♥ ✦</div>
-        </div>
-        <div class="wishes-list">
-            <div class="wish-card reveal">
-                <div class="wish-number">#1</div>
-                <p>Ваше присутствие для нас — огромная радость! А если вы захотите сделать подарок, будем благодарны за финансовую поддержку наших первых семейных шагов.</p>
-            </div>
-            <div class="wish-card reveal">
-                <div class="wish-number">#2</div>
-                <p>Нам важно, чтобы этот вечер стал для вас особенным! Поэтому предлагаем вам провести его в кругу взрослых, а заботу о детях доверить вашим близким.</p>
-            </div>
-            <div class="wish-card reveal">
-                <div class="wish-number">#3</div>
-                <p>Вместо цветов, которые, увы, быстро увянут, мы хотели бы подарить тепло и заботу тем, кто в них нуждается. Будем рады, если вы поддержите нашу идею.</p>
-            </div>
-        </div>
+    <section class="card card-peach" id="wishes">
+        <h2 class="card-title reveal">Пожелания</h2>
+        <p class="reveal">Ваше присутствие для нас — огромная радость! А если вы захотите сделать подарок, будем благодарны за финансовую поддержку наших первых семейных шагов.</p>
+        <p class="reveal">Просим не обременять себя выбором цветов — ваше присутствие сделает этот день ярче любых букетов!</p>
+        <div class="wish-emoji reveal">🎁</div>
     </section>
 
-    <div class="doodle-divider">· · ♥ · ·</div>
+    <!-- 👶 KIDS -->
+    <section class="card card-mint" id="kids">
+        <h2 class="card-title reveal">Маленькие гости</h2>
+        <p class="reveal">Нам важно, чтобы этот вечер стал для вас особенным! Поэтому предлагаем провести его в кругу взрослых, а заботу о детях доверить вашим близким.</p>
+        <div class="wish-emoji reveal">👶</div>
+    </section>
 
     <!-- 👗 DRESSCODE -->
-    <section class="dresscode-section" id="dresscode">
-        <div class="section-header reveal">
-            <h2>Дресс-код</h2>
-            <div class="ornament">✦ ♥ ✦</div>
-        </div>
-        <div class="dresscode-card reveal">
-            <p>Этот день мы хотим наполнить светом, красотой и гармонией — и ваш образ может стать частью этой общей картины. Будем рады, если вы выберете наряды в представленной цветовой палитре.</p>
-            <div class="color-hearts">
-                <span class="color-heart" style="color: #8b1a1a;" title="Бордовый">♥</span>
-                <span class="color-heart" style="color: #c0392b;" title="Красный">♥</span>
-                <span class="color-heart" style="color: #2c4a2c;" title="Тёмно-зелёный">♥</span>
-                <span class="color-heart" style="color: #1a1a1a;" title="Чёрный">♥</span>
-                <span class="color-heart" style="color: #d4c5a9;" title="Бежевый">♥</span>
-            </div>
+    <section class="card card-white" id="dresscode">
+        <h2 class="card-title reveal">Дресс-код</h2>
+        <p class="reveal">Этот день мы хотим наполнить светом, красотой и гармонией — и ваш образ может стать частью этой общей картины. Будем рады, если вы выберете наряды в представленной цветовой палитре.</p>
+        <div class="color-hearts reveal">
+            <span class="color-heart" style="color: #8b1a1a;" title="Бордовый">♥</span>
+            <span class="color-heart" style="color: #c0392b;" title="Красный">♥</span>
+            <span class="color-heart" style="color: #2c4a2c;" title="Тёмно-зелёный">♥</span>
+            <span class="color-heart" style="color: #1a1a1a;" title="Чёрный">♥</span>
+            <span class="color-heart" style="color: #d4c5a9;" title="Бежевый">♥</span>
         </div>
     </section>
-
-    <div class="doodle-divider">· · ♥ · ·</div>
 
     <!-- 📸 MEMORIES -->
-    <section class="memories-section" id="memories">
-        <div class="section-header reveal">
-            <h2>Воспоминания</h2>
-            <div class="ornament">✦ ♥ ✦</div>
-        </div>
-        <div class="memories-card reveal">
-            <div class="memories-card-inner">
-                <h3>📸 Фото и видео</h3>
-                <p>Чтобы ни один трогательный момент этого дня не потерялся, мы создали Telegram-группу, где вы сможете делиться фотографиями и видео.</p>
-                <a href="#" class="btn">Присоединиться</a>
-            </div>
-        </div>
+    <section class="card card-peach" id="memories">
+        <h2 class="card-title reveal">Воспоминания</h2>
+        <p class="reveal">📸 Чтобы ни один трогательный момент этого дня не потерялся, мы создали Telegram-группу, где вы сможете делиться фотографиями и видео.</p>
+        <a href="#" class="btn reveal">Присоединиться</a>
     </section>
 
-    <div class="doodle-divider">· · ♥ · ·</div>
-
     <!-- 📋 RSVP -->
-    <section class="rsvp-section" id="rsvp">
-        <div class="section-header reveal">
-            <h2>Анкета</h2>
-            <div class="ornament">✦ ♥ ✦</div>
-        </div>
-        <div class="rsvp-card reveal">
-            <p>Для того чтобы подготовиться к торжеству, мы просим вас заполнить нашу анкету.</p>
-
+    <section class="card card-cream" id="rsvp">
+        <h2 class="card-title reveal">Анкета гостя</h2>
+        <p class="reveal">Пожалуйста, заполните анкету до</p>
+        <div class="big-date reveal">01.07.26</div>
+        <div class="rsvp-form-wrap reveal">
             <form id="rsvpForm" onsubmit="submitForm(event)">
                 <div class="form-group">
                     <label>Ваше имя и фамилия</label>
                     <input type="text" name="name" required placeholder="Иван Иванов">
                 </div>
-
                 <div class="form-group">
                     <label>Вы будете присутствовать?</label>
                     <div class="radio-group">
@@ -264,7 +202,6 @@
                         </label>
                     </div>
                 </div>
-
                 <div class="form-group" id="guestCountGroup">
                     <label>Количество гостей</label>
                     <select name="guests">
@@ -274,7 +211,6 @@
                         <option value="4">4</option>
                     </select>
                 </div>
-
                 <div class="form-group">
                     <label>Предпочтения в еде</label>
                     <select name="food">
@@ -284,7 +220,6 @@
                         <option value="other">Другое</option>
                     </select>
                 </div>
-
                 <div class="form-group">
                     <label>Предпочтения по напиткам</label>
                     <select name="drinks">
@@ -293,15 +228,12 @@
                         <option value="nonalc">Безалкогольные</option>
                     </select>
                 </div>
-
                 <div class="form-group">
                     <label>Комментарии</label>
                     <textarea name="comments" placeholder="Что нам стоит знать..."></textarea>
                 </div>
-
                 <button type="submit" class="btn-submit">♥ Отправить анкету ♥</button>
             </form>
-
             <div class="form-success" id="formSuccess">
                 <h3>Спасибо! ♥</h3>
                 <p>Мы получили вашу анкету и с нетерпением ждём встречи!</p>
@@ -309,36 +241,36 @@
         </div>
     </section>
 
-    <div class="doodle-divider">· · ♥ · ·</div>
-
-    <!-- 💕 FOOTER / COUNTDOWN -->
-    <section class="footer-section" id="footer">
-        <div class="reveal">
-            <div class="footer-title">До встречи!</div>
-            <div class="footer-hearts">♥ ♥ ♥</div>
-
-            <div class="countdown" id="timer">
-                <div class="countdown-item">
-                    <div class="countdown-number" id="days">0</div>
-                    <div class="countdown-label">дней</div>
-                </div>
-                <div class="countdown-sep">:</div>
-                <div class="countdown-item">
-                    <div class="countdown-number" id="hours">0</div>
-                    <div class="countdown-label">часов</div>
-                </div>
-                <div class="countdown-sep">:</div>
-                <div class="countdown-item">
-                    <div class="countdown-number" id="minutes">0</div>
-                    <div class="countdown-label">минут</div>
-                </div>
-                <div class="countdown-sep">:</div>
-                <div class="countdown-item">
-                    <div class="countdown-number" id="seconds">0</div>
-                    <div class="countdown-label">секунд</div>
-                </div>
+    <!-- COUNTDOWN -->
+    <section class="card card-white" id="countdown-sec">
+        <div class="countdown reveal">
+            <div class="countdown-item">
+                <div class="countdown-number" id="days">00</div>
+                <div class="countdown-label">дни</div>
+            </div>
+            <div class="countdown-sep">:</div>
+            <div class="countdown-item">
+                <div class="countdown-number" id="hours">00</div>
+                <div class="countdown-label">часы</div>
+            </div>
+            <div class="countdown-sep">:</div>
+            <div class="countdown-item">
+                <div class="countdown-number" id="minutes">00</div>
+                <div class="countdown-label">минуты</div>
+            </div>
+            <div class="countdown-sep">:</div>
+            <div class="countdown-item">
+                <div class="countdown-number" id="seconds">00</div>
+                <div class="countdown-label">секунды</div>
             </div>
         </div>
+    </section>
+
+    <!-- 💕 GOODBYE -->
+    <section class="card card-green bye-card" id="footer">
+        <h2 class="card-title reveal">С нетерпением<br>ждём встречи!</h2>
+        <p class="reveal">с любовью,<br><strong>Даниил и Эльвина</strong></p>
+        <div class="bye-hearts reveal">♥ ♥ ♥</div>
     </section>
 
 </div>
