@@ -1,280 +1,467 @@
+
+Claude finished the response
+
+Edited 2 files, ran a command
+Edited 2 files, ran a command
+Готово! Обновил оба тега <img> — и на главной секции, и в секции «Узнали?». Теперь они ссылаются на photo.jpg вместо photos-combined.png. JPG-формат надёжнее отображается в браузерах, особенно при открытии через file://.
+
+Обнови страницу в браузере — фотография должна появиться.
+
+Uploaded image
+Image
+Сделай по такому формату
+
+
+Loaded tools, read a file
+Loaded tools, read a file
+Понял, полностью переделываю сайт в стиле этого примера — яркий, пастельный, с карточками и игривым дизайном. Сейчас перепишу все три файла.
+
+
+Created 2 files
+Created 2 files
+You've hit your limit · resets 2:10am (Europe/Moscow)
+
+как мне самому поправить код так чтобы шрифт изменился?
+
+Чтобы изменить шрифт на сайте, нужно поправить две вещи:
+
+1. В style.css — первая строка, импорт шрифтов из Google Fonts:
+
+css
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Nunito:wght@300;400;500;600;700&display=swap');
+Здесь Caveat — рукописный шрифт для заголовков, Nunito — основной текст. Замени названия на любые шрифты с fonts.google.com. Например, хочешь «Pacifico» вместо «Caveat» — пишешь family=Pacifico вместо family=Caveat:wght@400;500;600;700.
+
+2. Там же в CSS — найди где шрифты применяются:
+
+Основной текст задаётся в body:
+
+css
+font-family: 'Nunito', sans-serif;
+Рукописные заголовки — в классе .handwritten и в нескольких местах вроде .card-title, .hero-names, .tl-time:
+
+css
+font-family: 'Caveat', cursive;
+Просто замени 'Caveat' и 'Nunito' на нужные названия шрифтов по всему файлу.
+
+Если хочешь, скажи какой стиль шрифта тебе нравится (более строгий, более игривый, рукописный), и я сам поменяю.
+
+используй этот шрифт https://fonts.google.com/specimen/Ole?categoryFilters=Appearance:%2FTheme%2FWacky;Feeling:%2FExpressive%2FCute&preview.script=Latn
+
+
+Edited 2 files, read a file
+Edited 2 files, read a file
+Готово! Заменил шрифт «Caveat» на «Ole» во всех заголовках — имена на главной, названия секций, даты, время в тайминге. Обнови страницу в браузере, чтобы увидеть изменения.
+
+Учти, что Ole — довольно декоративный шрифт, и на кириллице он может отображаться не так, как на латинице. Если что-то будет выглядеть не так — скажи, подберём другой.
+
+я зашел по файлу, все как было так и осталось ъ
+
+
+Ran 2 commands
+Ran 2 commands
+Файлы лежат в папке outputs, которая не видна тебе напрямую. Скопирую весь сайт в папку на рабочем столе, чтобы ты мог открыть обновлённую версию.
+
+
+Copy wedding site to Desktop
+Copy wedding site to Desktop
+Готово! Обновлённый сайт теперь на рабочем столе в папке wedding-site. Открой файл index.html оттуда — увидишь новый шрифт Ole и весь обновлённый дизайн.
+
+обнови файлы
+
+
+Copy updated files to Desktop
+Copy updated files to Desktop
+Файлы обновлены в папке wedding-site на рабочем столе. Обнови страницу в браузере.
+
+скинь мне новые файлы
+
+index.html style.css script.js photo.jpg
+
+
+Index
+Code · HTML 
+
+Style
+Code · CSS 
+
+Script
+JS 
+
+Photo
+Image · JPG 
+index.html
+html
+
+script.js
+js
+
+style.css
+css
+
+вот файлы которые мы с тобой сделаем, адаптируй новый сайт под этот формат, оставь фото и шрифт остальное сделал так же
+
+
+Read 3 files
+Read 3 files
+Понял — беру твои текущие файлы, оставляю шрифты (Marck Script, Caveat, Comfortaa), фото (photos-combined.png), и переделываю всё в стиль розового референса с карточками. Сейчас перепишу все три файла.
+
+
+Read 3 files, created 2 files
+Read 3 files, created 2 files
+Теперь CSS:
+
+
+Created a file
+Created a file
+Теперь скрипт:
+
+
+Created a file
+Created a file
+Готово! Все три файла переписаны. Вот что изменилось:
+
+Фон: розово-пастельный (как на референсе) вместо тёмно-зелёного
+Герой: градиентный фон с анимированными «блобами», фото в круглой рамке с белой обводкой и бейджем даты
+Секции: цветные карточки со скруглёнными углами — зелёные, белые, персиковые, мятные, кремовые
+Шрифты: оставлены твои — Marck Script, Caveat, Comfortaa
+Фото: оставлен photos-combined.png
+Контент: весь сохранён + добавлены секции «Маленькие гости» и «Воспоминания»
+Таймер: тёмные карточки с белым текстом (как на референсе)
+index.html — открой и проверь.
+
+
+Index
+Code · HTML 
+сделай фон как был в предыдущем проекте
+
+
+Edited 9 files
+Edited 9 files
+Готово! Фон вернул на тёмно-зелёный (
+#2c4a2c) как был в предыдущем проекте. Герой тоже с тёмно-зелёным градиентом, имена светлые, навигация кремовая. Карточки секций остались цветными — они будут контрастировать на тёмном фоне.
+
+Обнови страницу и проверь.
+
+скинь все 3 файла чтобы я отредачил у себя
+
+API Error: 587 {"error":"coworkd_upstream_failed","category":"dns_failure","detail":"dial tcp: lookup api.anthropic.com on 172.16.10.1:53: read udp 172.16.10.3:57640->172.16.10.1:53: i/o timeout"}. This is a server-side issue, usually temporary — try again in a moment. If it persists, check status.claude.com.
+
+скинь все 3 файла чтобы я отредачил у себя
+
+index.html style.css script.js
+
+
+Index
+Code · HTML 
+
+Style
+Code · CSS 
+
+Script
+JS 
+Нужно проработать Анкету гостя, во первых убери кол-во гостей плашку. Во вторых нужно проработать отправку анкеты. Куда отправляются ответы? и в каком виде? пока не понятно что нужно указывать конечным местом складирования ответов.
+
+Хороший вопрос. Сейчас форма никуда не отправляется — при нажатии «Отправить» данные просто выводятся в консоль браузера и показывается «Спасибо». Для реального сбора ответов есть несколько вариантов, и выбор зависит от того, что тебе удобнее.
+
+Куда отправлять ответы из анкеты гостей?
+Google Таблица
+Отлично, Google Таблица — самый удобный вариант. Вот как это работает: форма отправляет данные на специальный URL (веб-приложение Google Apps Script), а скрипт записывает их построчно в таблицу. Тебе нужно будет сделать пару шагов в Google — сейчас объясню и сразу обновлю код.
+
+Сначала уберу «количество гостей» и подключу отправку в Google Sheets:
+
+
+Read a file, edited a file
+Read a file, edited a file
+Теперь обновлю скрипт — добавлю отправку в Google Sheets:
+
+
+Read a file, edited a file
+Read a file, edited a file
+Готово! Плашка «количество гостей» убрана, отправка подключена. Теперь тебе нужно сделать одну вещь — создать Google Apps Script, который будет принимать данные и записывать в таблицу. Вот пошаговая инструкция:
+
+1. Создай новую Google Таблицу (sheets.google.com → «Создать»). Назови как хочешь, например «Анкеты свадьба». В первой строке напиши заголовки столбцов: Дата | Имя | Присутствие | Еда | Напитки | Комментарий
+
+2. В таблице зайди в Расширения → Apps Script. Удали весь код и вставь вот это:
+
+javascript
+function doPost(e) {
+  var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+  var data = JSON.parse(e.postData.contents);
+  sheet.appendRow([
+    new Date(),
+    data.name || '',
+    data.attendance || '',
+    data.food || '',
+    data.drinks || '',
+    data.comments || ''
+  ]);
+  return ContentService.createTextOutput('OK');
+}
+3. Нажми Развернуть → Новое развёртывание. Тип: «Веб-приложение». Доступ: «Все». Нажми «Развернуть» и скопируй URL.
+
+4. Вставь этот URL в script.js вместо 'ВСТАВЬ_СЮДА_URL'.
+
+После этого каждая отправленная анкета будет появляться новой строкой в твоей таблице. Хочешь, помогу с настройкой?
+
+Uploaded image
+1779737167435_telegram-cloud-photo-size-2-5235601809009745836-y.jpg
+Uploaded image
+1779737182522_telegram-cloud-photo-size-2-5235601809009745837-y.jpg
+Давай полностью поменяем вот новые вводные:Свадебное приглашение в минималистичном элегантном стиле, вертикальное. Цветовая гамма: сливочный, приглушённый синий, пыльно-розовый, тёплый серый. На приглашении крупно: имена «Эльвина & Даниил», дата «16 июля 2025». Ниже — структура дня: «13:15 — ЗАГС в особняке Спиридонова», «17:00 — банкет в Lauren Parker». Мелким шрифтом внизу: дресс-код для женщин — пастельные и пыльные оттенки (пыльно-розовый, лавандовый, мятный, нежно-голубой, глубокий синий, изумрудный, серый); для мужчин — брюки (не джинсы) + рубашка или поло. Текст на русском, шрифты тонкие, геометрические или лёгкие серифные. Фон — текстура плотной бумаги или лёгкий акварельный размыв. Никаких ярких пятен: нет красного, оранжевого, кислотного зелёного. В углу — стилизованные цветы каллы. Всё выглядит дорого, спокойно и воздушно.
+
+Show more
+
+Thought process
+Thought process
+Полный редизайн — понял. Сначала скопирую новое фото, потом перепишу все три файла с нуля.
+
+
+Ran 3 commands
+Ran 3 commands
+Фото уже на месте. Теперь полностью переписываю всё под новый стиль — минималистичный, элегантный, с новыми данными.
+
+
+Created 3 files
+Created 3 files
+Готово! Полный редизайн с нуля. Что изменилось:
+
+Стиль — минималистичный, элегантный, «дорогой». Фон сливочный с лёгкими акварельными пятнами. Шрифты: Cormorant Garamond (серифный, тонкий) для заголовков, Raleway (геометрический, лёгкий) для текста. В углах — стилизованные каллы.
+
+Цвета — сливочный, приглушённый синий, пыльно-розовый, тёплый серый. Никакого красного, оранжевого.
+
+Данные — Эльвина & Даниил, 16 июля 2025, 13:15 ЗАГС в особняке Спиридонова, 17:00 банкет в Lauren Parker.
+
+Дресс-код — палитра из 7 пастельных/пыльных кружков для женщин + текст про мужчин (брюки + рубашка/поло).
+
+Анкета — с отправкой в Google Sheets (нужно подключить Apps Script).
+
+Открой index.html и проверь.
+
+
+Index
+Code · HTML 
+сделай так же как на фото макет
+
+
+Thought process
+Thought process
+Понял — нужен стиль как на фото: крафтовый, уютный, с рукописными шрифтами, голубыми блобами, бежевыми карточками и скрапбук-эстетикой. Полностью переделываю.
+
+
+Created 3 files
+Created 3 files
+Готово! Теперь сайт сделан в стиле фото-референса:
+
+Фон — шёлковая текстура (тёплая, с тонкими диагональными линиями)
+Карточки — бежевые (крафт-бумага) со скруглёнными углами, как на макете
+Голубые блоки — для дресс-кода и деталей (как синие blob-секции на фото)
+Шрифты — Caveat (рукописный, крафтовый) для заголовков, Montserrat (чистый) для текста
+Декор — волнистые SVG-линии, пин на фото, скрапбук-эстетика
+Фото — polaroid-стиль с наклоном и пином
+Таймер — тёмные карточки внизу (как на референсе)
+Открой index.html и проверь.
+
+
+Index
+Code · HTML 
+обнови теперь все 3 файла
+
+Файлы уже обновлены на рабочем столе. Вот ссылки:
+
+index.html style.css script.js
+
+
+Index
+Code · HTML 
+
+Style
+Code · CSS 
+
+Script
+JS 
+
+Opus uses your limit faster. Try another model for longer conversations.
+
+
+
+Claude is AI and can make mistakes. Please double-check responses.
+Index · HTML
 <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Даниил & Эльвина — Свадьба</title>
+    <title>Эльвина & Даниил — 16 июля 2025</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-<!-- FLOATING HEARTS BACKGROUND -->
-<div class="floating-hearts" id="floatingHearts"></div>
-
-<!-- NAV DOTS -->
-<div class="nav-dots" id="navDots">
-    <button class="nav-dot active" data-target="home" title="Главная"></button>
-    <button class="nav-dot" data-target="greeting" title="Приветствие"></button>
-    <button class="nav-dot" data-target="photos" title="Фото"></button>
-    <button class="nav-dot" data-target="timing" title="Тайминг"></button>
-    <button class="nav-dot" data-target="wishes" title="Пожелания"></button>
-    <button class="nav-dot" data-target="dresscode" title="Дресс-код"></button>
-    <button class="nav-dot" data-target="rsvp" title="Анкета"></button>
-    <button class="nav-dot" data-target="footer" title="До встречи"></button>
-</div>
-
+ 
 <div class="page-wrapper">
-
-    <!-- ♥ HERO ♥ -->
-    <section class="hero" id="home">
-        <div class="hero-blob blob-1"></div>
-        <div class="hero-blob blob-2"></div>
-        <div class="hero-blob blob-3"></div>
-        <div class="hero-content">
-            <div class="hero-photo-frame reveal">
-                <img src="photos-combined.png" alt="Даниил и Эльвина">
-                <div class="photo-date-badge">16.07.26</div>
-            </div>
-            <h1 class="hero-names reveal">
-                Даниил
-                <span class="amp">+</span>
-                Эльвина
-                <span class="amp">=</span>
-                <span class="heart-big">♥</span>
-            </h1>
+ 
+    <!-- ═══ HERO ═══ -->
+    <section class="card card-cream hero-card" id="home">
+        <!-- Squiggle deco -->
+        <svg class="deco-squiggle sq-top" viewBox="0 0 200 30" fill="none"><path d="M0 15 Q25 0, 50 15 Q75 30, 100 15 Q125 0, 150 15 Q175 30, 200 15" stroke="#7ea8c9" stroke-width="1.5" fill="none" opacity=".3"/></svg>
+ 
+        <p class="hero-tag reveal">наша свадьба</p>
+ 
+        <div class="hero-date-small reveal">— 16.07.2025 —</div>
+ 
+        <div class="hero-photo reveal">
+            <img src="photos-combined.png" alt="Эльвина и Даниил">
         </div>
-        <div class="scroll-arrow reveal" onclick="document.getElementById('greeting').scrollIntoView({behavior:'smooth'})">↓</div>
-    </section>
-
-    <!-- ♥ GREETING ♥ -->
-    <section class="card card-green" id="greeting">
-        <h2 class="card-title reveal">Дорогие друзья!</h2>
-        <p class="reveal">Мы так вас любим!<br>Поэтому приглашаем стать свидетелями дня рождения нашей семьи, которое состоится:</p>
-        <div class="big-date reveal">16.07.26</div>
-        <div class="divider-hearts">♥ ♥ ♥</div>
-        <h3 class="card-subtitle reveal">Место</h3>
-        <div class="venue-card reveal">
-            <div class="venue-emoji">🏛️</div>
-            <p class="venue-name">«Особняк 21Культ»</p>
-            <p class="venue-addr">г. Москва,<br>Новая Басманная ул., 19с1</p>
-            <a href="https://yandex.ru/maps/?text=Москва+Новая+Басманная+19с1" target="_blank" class="btn">построить маршрут →</a>
+ 
+        <div class="hero-names-wrap reveal">
+            <svg class="name-underline" viewBox="0 0 300 20" fill="none"><path d="M10 15 Q75 0, 150 12 Q225 24, 290 10" stroke="#7ea8c9" stroke-width="1.2" fill="none" opacity=".4"/></svg>
+            <h1 class="hero-names">Эльвина & Даниил</h1>
         </div>
     </section>
-
-    <!-- 📸 PHOTOS -->
+ 
+    <!-- ═══ GREETING ═══ -->
+    <section class="card card-cream" id="greeting">
+        <h2 class="card-title reveal">Дорогие друзья и родные!</h2>
+        <svg class="deco-squiggle sq-under-title" viewBox="0 0 150 15" fill="none"><path d="M0 8 Q37 0, 75 8 Q112 16, 150 8" stroke="#d4a0a0" stroke-width="1" fill="none" opacity=".4"/></svg>
+        <p class="reveal">В нашей жизни предстоят счастливые перемены! Мы хотим, чтобы в этот день рядом с нами были самые близкие и дорогие для нас люди.</p>
+        <p class="reveal">Будем рады разделить с вами чудесный праздник в день нашей свадьбы, которая состоится:</p>
+        <div class="big-date reveal">16.07.2025</div>
+    </section>
+ 
+    <!-- ═══ PHOTOS ═══ -->
     <section class="card card-cream" id="photos">
-        <h2 class="card-title reveal">Узнали?</h2>
-        <div class="photo-frame-card reveal">
-            <div class="tape tape-l"></div>
-            <div class="tape tape-r"></div>
-            <img src="photos-combined.png" alt="Даниил и Эльвина в детстве">
+        <div class="photo-collage reveal">
+            <div class="photo-pin"></div>
+            <img src="photos-combined.png" alt="Мы в детстве">
         </div>
-        <p class="photo-caption reveal">Время пронеслось незаметно, и у этих двух милых детей скоро свадьба!<br><em>Да-да, мы сами в шоке!</em></p>
+        <p class="caption reveal"><em>Время пронеслось незаметно, и у этих двух милых детей скоро свадьба!</em></p>
     </section>
-
-    <!-- 📅 CALENDAR -->
-    <section class="card card-white" id="calendar">
-        <h2 class="card-title reveal">Запомните дату</h2>
-        <div class="calendar-inner reveal">
-            <div class="calendar-month">Июль 2026</div>
-            <div class="calendar-grid">
-                <div class="day-name">пн</div>
-                <div class="day-name">вт</div>
-                <div class="day-name">ср</div>
-                <div class="day-name">чт</div>
-                <div class="day-name">пт</div>
-                <div class="day-name">сб</div>
-                <div class="day-name">вс</div>
-                <div class="day empty"></div>
-                <div class="day empty"></div>
-                <div class="day">1</div>
-                <div class="day">2</div>
-                <div class="day">3</div>
-                <div class="day">4</div>
-                <div class="day">5</div>
-                <div class="day">6</div>
-                <div class="day">7</div>
-                <div class="day">8</div>
-                <div class="day">9</div>
-                <div class="day">10</div>
-                <div class="day">11</div>
-                <div class="day">12</div>
-                <div class="day">13</div>
-                <div class="day">14</div>
-                <div class="day">15</div>
-                <div class="day highlight">16</div>
-                <div class="day">17</div>
-                <div class="day">18</div>
-                <div class="day">19</div>
-                <div class="day">20</div>
-                <div class="day">21</div>
-                <div class="day">22</div>
-                <div class="day">23</div>
-                <div class="day">24</div>
-                <div class="day">25</div>
-                <div class="day">26</div>
-                <div class="day">27</div>
-                <div class="day">28</div>
-                <div class="day">29</div>
-                <div class="day">30</div>
-                <div class="day">31</div>
+ 
+    <!-- ═══ WHERE ═══ -->
+    <section class="card card-cream" id="where">
+        <h2 class="card-title title-handdrawn reveal">Где?</h2>
+        <div class="venue-block reveal">
+            <div class="venue-icon">🏛️</div>
+            <p class="venue-label">ЗАГС</p>
+            <p class="venue-name">Особняк Спиридонова</p>
+        </div>
+        <div class="venue-block reveal">
+            <div class="venue-icon">🍽️</div>
+            <p class="venue-label">Банкет</p>
+            <p class="venue-name">Lauren Parker</p>
+        </div>
+    </section>
+ 
+    <!-- ═══ SCHEDULE ═══ -->
+    <section class="card card-cream" id="schedule">
+        <h2 class="card-title title-handdrawn reveal">Во сколько?</h2>
+        <div class="time-list">
+            <div class="time-row reveal">
+                <span class="time-val">13:15</span>
+                <span class="time-label">церемония<br><small>Особняк Спиридонова</small></span>
+            </div>
+            <div class="time-row reveal">
+                <span class="time-val">17:00</span>
+                <span class="time-label">банкет<br><small>Lauren Parker</small></span>
             </div>
         </div>
     </section>
-
-    <!-- ⏰ TIMING -->
-    <section class="card card-white" id="timing">
-        <h2 class="card-title reveal">Тайминг</h2>
-        <div class="timing-list">
-            <div class="timing-item reveal">
-                <div class="timing-time">17:00</div>
-                <div class="timing-desc">сбор гостей</div>
-            </div>
-            <div class="timing-item reveal">
-                <div class="timing-time">17:30</div>
-                <div class="timing-desc">церемония</div>
-            </div>
-            <div class="timing-item reveal">
-                <div class="timing-time">18:00</div>
-                <div class="timing-desc">банкет</div>
-            </div>
-            <div class="timing-item reveal">
-                <div class="timing-time">22:00</div>
-                <div class="timing-desc">торт</div>
+ 
+    <!-- ═══ DRESSCODE (blue blob) ═══ -->
+    <section class="card card-blue" id="dresscode">
+        <h2 class="card-title title-handdrawn reveal">Дресс-код</h2>
+        <p class="reveal">Нам будет очень приятно, если вы учтёте наши пожелания при выборе одежды.</p>
+        <div class="dress-sub reveal">
+            <p><strong>Женщинам</strong> — вечерние наряды пастельных и пыльных оттенков</p>
+            <div class="palette">
+                <span class="dot" style="--c:#d4a0a0"></span>
+                <span class="dot" style="--c:#b8a9c9"></span>
+                <span class="dot" style="--c:#a8ccb0"></span>
+                <span class="dot" style="--c:#a0c4d4"></span>
+                <span class="dot" style="--c:#3d5a80"></span>
+                <span class="dot" style="--c:#2d6a4f"></span>
+                <span class="dot" style="--c:#9a8c7c"></span>
             </div>
         </div>
-    </section>
-
-    <!-- 💝 WISHES -->
-    <section class="card card-peach" id="wishes">
-        <h2 class="card-title reveal">Пожелания</h2>
-        <p class="reveal">Ваше присутствие для нас — огромная радость! А если вы захотите сделать подарок, будем благодарны за финансовую поддержку наших первых семейных шагов.</p>
-        <p class="reveal">Просим не обременять себя выбором цветов — ваше присутствие сделает этот день ярче любых букетов!</p>
-        <div class="wish-emoji reveal">🎁</div>
-    </section>
-
-    <!-- 👶 KIDS -->
-    <section class="card card-mint" id="kids">
-        <h2 class="card-title reveal">Маленькие гости</h2>
-        <p class="reveal">Нам важно, чтобы этот вечер стал для вас особенным! Поэтому предлагаем провести его в кругу взрослых, а заботу о детях доверить вашим близким.</p>
-        <div class="wish-emoji reveal">👶</div>
-    </section>
-
-    <!-- 👗 DRESSCODE -->
-    <section class="card card-white" id="dresscode">
-        <h2 class="card-title reveal">Дресс-код</h2>
-        <p class="reveal">Этот день мы хотим наполнить светом, красотой и гармонией — и ваш образ может стать частью этой общей картины. Будем рады, если вы выберете наряды в представленной цветовой палитре.</p>
-        <div class="color-hearts reveal">
-            <span class="color-heart" style="color: #8b1a1a;" title="Бордовый">♥</span>
-            <span class="color-heart" style="color: #c0392b;" title="Красный">♥</span>
-            <span class="color-heart" style="color: #2c4a2c;" title="Тёмно-зелёный">♥</span>
-            <span class="color-heart" style="color: #1a1a1a;" title="Чёрный">♥</span>
-            <span class="color-heart" style="color: #d4c5a9;" title="Бежевый">♥</span>
+        <div class="dress-sub reveal">
+            <p><strong>Мужчинам</strong> — брюки (не джинсы) + рубашка или поло</p>
         </div>
     </section>
-
-    <!-- 📸 MEMORIES -->
-    <section class="card card-peach" id="memories">
-        <h2 class="card-title reveal">Воспоминания</h2>
-        <p class="reveal">📸 Чтобы ни один трогательный момент этого дня не потерялся, мы создали Telegram-группу, где вы сможете делиться фотографиями и видео.</p>
-        <a href="#" class="btn reveal">Присоединиться</a>
+ 
+    <!-- ═══ DETAILS (blue blob) ═══ -->
+    <section class="card card-blue" id="details">
+        <h2 class="card-title title-handdrawn reveal">Детали</h2>
+        <p class="reveal">Свои тёплые слова и пожелания приносите в сердцах, а подарки — в конверте.</p>
+        <p class="reveal">Просим не обременять себя выбором цветов. Ваше присутствие сделает этот день ярче любых букетов!</p>
+        <p class="reveal">Мы хотим, чтобы этот день стал для вас лёгким, приятным и незабываемым. Поэтому мы решили провести свадьбу без детей. Благодарим за ваше понимание и с нетерпением ждём встречи!</p>
     </section>
-
-    <!-- 📋 RSVP -->
+ 
+    <!-- ═══ RSVP ═══ -->
     <section class="card card-cream" id="rsvp">
-        <h2 class="card-title reveal">Анкета гостя</h2>
-        <p class="reveal">Пожалуйста, заполните анкету до</p>
-        <div class="big-date reveal">01.07.26</div>
-        <div class="rsvp-form-wrap reveal">
+        <h2 class="card-title title-handdrawn reveal">Анкета гостя</h2>
+        <p class="reveal">Подтвердите, пожалуйста, своё присутствие на торжестве до <strong>1 июля 2025</strong></p>
+        <div class="form-wrap reveal">
             <form id="rsvpForm" onsubmit="submitForm(event)">
-                <div class="form-group">
-                    <label>Ваше имя и фамилия</label>
+                <div class="fg">
+                    <label>Имя и фамилия</label>
                     <input type="text" name="name" required placeholder="Иван Иванов">
                 </div>
-                <div class="form-group">
-                    <label>Вы будете присутствовать?</label>
-                    <div class="radio-group">
-                        <label class="radio-option">
-                            <input type="radio" name="attendance" value="yes" required> С радостью!
-                        </label>
-                        <label class="radio-option">
-                            <input type="radio" name="attendance" value="no"> Не смогу
-                        </label>
+                <div class="fg">
+                    <label>Присутствие</label>
+                    <div class="radio-row">
+                        <label class="rb"><input type="radio" name="attendance" value="yes" required><span>С радостью!</span></label>
+                        <label class="rb"><input type="radio" name="attendance" value="no"><span>Не смогу</span></label>
                     </div>
                 </div>
-                <div class="form-group" id="guestCountGroup">
-                    <label>Количество гостей</label>
-                    <select name="guests">
-                        <option value="1">1</option>
-                        <option value="2" selected>2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label>Предпочтения в еде</label>
+                <div class="fg">
+                    <label>Еда</label>
                     <select name="food">
-                        <option value="none">Нет ограничений</option>
-                        <option value="vegetarian">Вегетарианское</option>
-                        <option value="vegan">Веганское</option>
-                        <option value="other">Другое</option>
+                        <option>Нет ограничений</option>
+                        <option>Вегетарианское</option>
+                        <option>Веганское</option>
+                        <option>Другое</option>
                     </select>
                 </div>
-                <div class="form-group">
-                    <label>Предпочтения по напиткам</label>
+                <div class="fg">
+                    <label>Напитки</label>
                     <select name="drinks">
-                        <option value="any">Пью всё</option>
-                        <option value="wine">Только вино</option>
-                        <option value="nonalc">Безалкогольные</option>
+                        <option>Пью всё</option>
+                        <option>Только вино</option>
+                        <option>Безалкогольные</option>
                     </select>
                 </div>
-                <div class="form-group">
-                    <label>Комментарии</label>
+                <div class="fg">
+                    <label>Комментарий</label>
                     <textarea name="comments" placeholder="Что нам стоит знать..."></textarea>
                 </div>
-                <button type="submit" class="btn-submit">♥ Отправить анкету ♥</button>
+                <button type="submit">заполнить анкету</button>
             </form>
-            <div class="form-success" id="formSuccess">
+            <div class="ok-msg" id="formSuccess">
                 <h3>Спасибо! ♥</h3>
-                <p>Мы получили вашу анкету и с нетерпением ждём встречи!</p>
+                <p>Мы получили вашу анкету.</p>
             </div>
         </div>
     </section>
-
-    <!-- COUNTDOWN -->
-    <section class="card card-white" id="countdown-sec">
+ 
+    <!-- ═══ GOODBYE ═══ -->
+    <section class="card card-cream bye-card" id="footer">
         <div class="countdown reveal">
-            <div class="countdown-item">
-                <div class="countdown-number" id="days">00</div>
-                <div class="countdown-label">дни</div>
-            </div>
-            <div class="countdown-sep">:</div>
-            <div class="countdown-item">
-                <div class="countdown-number" id="hours">00</div>
-                <div class="countdown-label">часы</div>
-            </div>
-            <div class="countdown-sep">:</div>
-            <div class="countdown-item">
-                <div class="countdown-number" id="minutes">00</div>
-                <div class="countdown-label">минуты</div>
-            </div>
-            <div class="countdown-sep">:</div>
-            <div class="countdown-item">
-                <div class="countdown-number" id="seconds">00</div>
-                <div class="countdown-label">секунды</div>
-            </div>
+            <div class="cd"><span id="days">00</span><small>дней</small></div>
+            <div class="cd-sep">:</div>
+            <div class="cd"><span id="hours">00</span><small>часов</small></div>
+            <div class="cd-sep">:</div>
+            <div class="cd"><span id="minutes">00</span><small>минут</small></div>
+            <div class="cd-sep">:</div>
+            <div class="cd"><span id="seconds">00</span><small>секунд</small></div>
         </div>
+        <h2 class="card-title title-handdrawn reveal">Мы будем счастливы видеть вас на нашем торжестве!</h2>
+        <p class="bye-sign reveal">с любовью, Эльвина и Даниил</p>
+        <div class="bye-heart reveal">♥</div>
+        <!-- Small doodles -->
+        <svg class="deco-squiggle sq-bye" viewBox="0 0 200 30" fill="none"><path d="M0 15 Q25 5, 50 15 Q75 25, 100 15 Q125 5, 150 15 Q175 25, 200 15" stroke="#d4a0a0" stroke-width="1" fill="none" opacity=".25"/></svg>
     </section>
-
-    <!-- 💕 GOODBYE -->
-    <section class="card card-green bye-card" id="footer">
-        <h2 class="card-title reveal">С нетерпением<br>ждём встречи!</h2>
-        <p class="reveal">с любовью,<br><strong>Даниил и Эльвина</strong></p>
-        <div class="bye-hearts reveal">♥ ♥ ♥</div>
-    </section>
-
+ 
 </div>
-
+ 
 <script src="script.js"></script>
 </body>
 </html>
+ 
