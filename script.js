@@ -1,103 +1,83 @@
-// ===== COUNTDOWN TIMER =====
-const weddingDate = new Date('2026-07-16T17:00:00');
-
+// ===== COUNTDOWN =====
+const weddingDate = new Date('2025-07-16T13:15:00');
+ 
 function updateCountdown() {
-    const now = new Date();
-    const diff = weddingDate - now;
-
+    const diff = weddingDate - new Date();
     if (diff <= 0) {
-        document.getElementById('days').textContent = '00';
-        document.getElementById('hours').textContent = '00';
-        document.getElementById('minutes').textContent = '00';
-        document.getElementById('seconds').textContent = '00';
+        ['days','hours','minutes','seconds'].forEach(id =>
+            document.getElementById(id).textContent = '00');
         return;
     }
-
-    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-
-    document.getElementById('days').textContent = String(days).padStart(2, '0');
-    document.getElementById('hours').textContent = String(hours).padStart(2, '0');
-    document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
-    document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+    document.getElementById('days').textContent =
+        String(Math.floor(diff / 864e5)).padStart(2, '0');
+    document.getElementById('hours').textContent =
+        String(Math.floor(diff % 864e5 / 36e5)).padStart(2, '0');
+    document.getElementById('minutes').textContent =
+        String(Math.floor(diff % 36e5 / 6e4)).padStart(2, '0');
+    document.getElementById('seconds').textContent =
+        String(Math.floor(diff % 6e4 / 1e3)).padStart(2, '0');
 }
-
 updateCountdown();
 setInterval(updateCountdown, 1000);
-
+ 
 // ===== SCROLL REVEAL =====
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-        }
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+        if (e.isIntersecting) e.target.classList.add('visible');
     });
 }, { threshold: 0.15 });
-
+ 
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
+ 
 // ===== NAV DOTS =====
 const dots = document.querySelectorAll('.nav-dot');
 const sections = [];
-
+ 
 dots.forEach(dot => {
-    const targetId = dot.getAttribute('data-target');
-    const targetEl = document.getElementById(targetId);
-    if (targetEl) sections.push({ dot, el: targetEl });
-
-    dot.addEventListener('click', () => {
-        if (targetEl) targetEl.scrollIntoView({ behavior: 'smooth' });
-    });
+    const el = document.getElementById(dot.dataset.target);
+    if (el) sections.push({ dot, el });
+    dot.addEventListener('click', () =>
+        el && el.scrollIntoView({ behavior: 'smooth' }));
 });
-
-const dotObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
+ 
+const dotObs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+        if (e.isIntersecting) {
             dots.forEach(d => d.classList.remove('active'));
-            const match = sections.find(s => s.el === entry.target);
-            if (match) match.dot.classList.add('active');
+            const m = sections.find(s => s.el === e.target);
+            if (m) m.dot.classList.add('active');
         }
     });
 }, { threshold: 0.3 });
-
-sections.forEach(s => dotObserver.observe(s.el));
-
-// ===== FLOATING DECORATIONS =====
-function createFloatingHearts() {
-    const container = document.getElementById('floatingHearts');
-    if (!container) return;
-    const items = ['♥', '♡', '❤', '✿', '❀', '🌿', '✦', '♥', '♥', '♡'];
-
-    for (let i = 0; i < 20; i++) {
-        const span = document.createElement('span');
-        span.textContent = items[Math.floor(Math.random() * items.length)];
-        span.style.left = Math.random() * 100 + '%';
-        span.style.animationDuration = (10 + Math.random() * 15) + 's';
-        span.style.animationDelay = (Math.random() * 12) + 's';
-        span.style.fontSize = (0.7 + Math.random() * 1) + 'rem';
-        container.appendChild(span);
-    }
-}
-createFloatingHearts();
-
-// ===== FORM =====
+ 
+sections.forEach(s => dotObs.observe(s.el));
+ 
+// ===== FORM (Google Sheets) =====
+// ⚠️ ВСТАВЬ URL GOOGLE APPS SCRIPT
+const GOOGLE_SCRIPT_URL = 'ВСТАВЬ_СЮДА_URL';
+ 
 function submitForm(e) {
     e.preventDefault();
     const form = document.getElementById('rsvpForm');
-    const formData = new FormData(form);
-    const data = Object.fromEntries(formData.entries());
-
-    console.log('Анкета:', data);
-
-    form.style.display = 'none';
-    document.getElementById('formSuccess').style.display = 'block';
-}
-
-document.querySelectorAll('input[name="attendance"]').forEach(radio => {
-    radio.addEventListener('change', (e) => {
-        const guestGroup = document.getElementById('guestCountGroup');
-        guestGroup.style.display = e.target.value === 'no' ? 'none' : 'block';
+    const btn = form.querySelector('button[type="submit"]');
+    const data = Object.fromEntries(new FormData(form).entries());
+ 
+    btn.textContent = 'отправляем...';
+    btn.disabled = true;
+ 
+    fetch(GOOGLE_SCRIPT_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+    })
+    .then(() => {
+        form.style.display = 'none';
+        document.getElementById('formSuccess').style.display = 'block';
+    })
+    .catch(() => {
+        btn.textContent = 'ошибка, попробуйте ещё';
+        btn.disabled = false;
+        setTimeout(() => { btn.textContent = 'заполнить анкету'; }, 3000);
     });
-});
+}
