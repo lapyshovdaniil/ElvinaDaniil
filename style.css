@@ -48,6 +48,9 @@ body{
     width:100%;height:100vh;
     overflow:visible;
     pointer-events:none;
+    will-change:transform;
+    -webkit-backface-visibility:hidden;
+    backface-visibility:hidden;
 }
 .bg-mosaic img{
     position:absolute;
