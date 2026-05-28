@@ -141,8 +141,15 @@ sections.forEach(s => dotObs.observe(s.el));
     }
 
     // Фотки двигаются вместе со скроллом (контейнер fixed, сдвигаем содержимое)
+    let ticking = false;
     window.addEventListener('scroll', () => {
-        container.style.transform = 'translateY(' + (-window.scrollY) + 'px)';
+        if (!ticking) {
+            requestAnimationFrame(() => {
+                container.style.transform = 'translate3d(0,' + (-window.scrollY) + 'px,0)';
+                ticking = false;
+            });
+            ticking = true;
+        }
     }, { passive: true });
 })();
 
