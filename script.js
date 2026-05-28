@@ -75,8 +75,8 @@ sections.forEach(s => dotObs.observe(s.el));
     if (!container) return;
 
     const srcs = [
-        'photos-combined.png','photo.jpg','slide2.jpg',
-        'slide4.jpg','slide5.jpg'
+        'images/photos-combined.png','images/photo.jpg','images/slide2.jpg',
+        'images/slide4.jpg','images/slide5.jpg'
     ];
 
     // Без повторов: сосед слева, сосед сверху, и сосед по диагонали
@@ -103,8 +103,7 @@ sections.forEach(s => dotObs.observe(s.el));
         return grid;
     }
 
-    const pageH = Math.max(document.body.scrollHeight, 6000);
-    container.style.height = pageH + 'px';
+    const pageH = Math.max(document.body.scrollHeight, 8000);
 
     const vw = window.innerWidth;
     const cols = 2;
@@ -141,10 +140,9 @@ sections.forEach(s => dotObs.observe(s.el));
         container.appendChild(img);
     }
 
-    // Параллакс — мозаика двигается чуть медленнее
+    // Фотки двигаются вместе со скроллом (контейнер fixed, сдвигаем содержимое)
     window.addEventListener('scroll', () => {
-        const pct = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
-        container.style.transform = 'translateY(' + (-pct * 8) + '%)';
+        container.style.transform = 'translateY(' + (-window.scrollY) + 'px)';
     }, { passive: true });
 })();
 
