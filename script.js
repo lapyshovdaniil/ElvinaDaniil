@@ -129,7 +129,8 @@ sections.forEach(s => dotObs.observe(s.el));
         const rot = (Math.random() - 0.5) * 14;
         // Распределяем по всей ширине экрана
         const zoneW = vw / cols;
-        const x = col * zoneW + (Math.random() * (zoneW - w * 0.3));
+        const maxX = vw - w; // не вылезать за правый край
+        const x = Math.min(col * zoneW + (Math.random() * (zoneW - w * 0.5)), maxX);
         const y = row * rowH + (Math.random() * 30 - 15);
 
         img.style.cssText =
