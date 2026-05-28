@@ -75,8 +75,8 @@ sections.forEach(s => dotObs.observe(s.el));
     if (!container) return;
 
     const srcs = [
-        'images/photos-combined.png','images/photo.jpg','images/slide2.jpg',
-        'images/slide4.jpg','images/slide5.jpg'
+        'photos-combined.png','photo.jpg','slide2.jpg',
+        'slide4.jpg','slide5.jpg'
     ];
 
     // Без повторов: сосед слева, сосед сверху, и сосед по диагонали
