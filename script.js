@@ -140,17 +140,11 @@ sections.forEach(s => dotObs.observe(s.el));
         container.appendChild(img);
     }
 
-    // Фотки двигаются вместе со скроллом (контейнер fixed, сдвигаем содержимое)
-    let ticking = false;
-    window.addEventListener('scroll', () => {
-        if (!ticking) {
-            requestAnimationFrame(() => {
-                container.style.transform = 'translate3d(0,' + (-window.scrollY) + 'px,0)';
-                ticking = false;
-            });
-            ticking = true;
-        }
-    }, { passive: true });
+    // Высота мозаики = высота контента (пересчёт после загрузки)
+    container.style.height = pageH + 'px';
+    window.addEventListener('load', () => {
+        container.style.height = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight) + 'px';
+    });
 })();
 
 // ===== FORM (Google Sheets) =====
