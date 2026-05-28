@@ -5,116 +5,155 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Эльвина & Даниил — 16 июля 2025</title>
     <link rel="stylesheet" href="style.css">
+    <style>/* Times New Roman подключён как системный шрифт */</style>
 </head>
 <body>
- 
+
+<!-- Background mosaic -->
+<div class="bg-mosaic" id="bgMosaic"></div>
+
+<!-- Subtle floating elements -->
+<div class="floating-els" id="floatingEls"></div>
+
+<!-- Nav dots -->
+<nav class="nav-dots" id="navDots" aria-label="Навигация по секциям">
+    <button class="nav-dot active" data-target="home" aria-label="Главная"></button>
+    <button class="nav-dot" data-target="greeting" aria-label="Приветствие"></button>
+    <button class="nav-dot" data-target="photos" aria-label="Фото"></button>
+    <button class="nav-dot" data-target="schedule" aria-label="Расписание"></button>
+    <button class="nav-dot" data-target="wishes" aria-label="Пожелания"></button>
+    <button class="nav-dot" data-target="dresscode" aria-label="Дресс-код"></button>
+    <button class="nav-dot" data-target="rsvp" aria-label="Анкета"></button>
+    <button class="nav-dot" data-target="footer" aria-label="До встречи"></button>
+</nav>
+
 <div class="page-wrapper">
- 
-    <!-- ═══ HERO ═══ -->
-    <section class="card card-cream hero-card" id="home">
-        <!-- Squiggle deco -->
-        <svg class="deco-squiggle sq-top" viewBox="0 0 200 30" fill="none"><path d="M0 15 Q25 0, 50 15 Q75 30, 100 15 Q125 0, 150 15 Q175 30, 200 15" stroke="#7ea8c9" stroke-width="1.5" fill="none" opacity=".3"/></svg>
- 
-        <p class="hero-tag reveal">наша свадьба</p>
- 
-        <div class="hero-date-small reveal">— 16.07.2025 —</div>
- 
-        <div class="hero-photo reveal">
-            <img src="photos-combined.png" alt="Эльвина и Даниил">
-        </div>
- 
-        <div class="hero-names-wrap reveal">
-            <svg class="name-underline" viewBox="0 0 300 20" fill="none"><path d="M10 15 Q75 0, 150 12 Q225 24, 290 10" stroke="#7ea8c9" stroke-width="1.2" fill="none" opacity=".4"/></svg>
-            <h1 class="hero-names">Эльвина & Даниил</h1>
+
+    <!-- ═══════ HERO ═══════ -->
+    <section class="hero-section" id="home">
+        <div class="card card-cream hero-card">
+            <!-- Calla lily top-left -->
+            <svg class="deco calla-tl" viewBox="0 0 100 160" fill="none">
+                <path d="M50 150 L48 70" stroke="#c4b8a4" stroke-width="1.3"/>
+                <path d="M48 70 C32 62,20 40,28 22 C34 10,48 7,54 16 C60 25,50 45,48 70Z" stroke="#c4b8a4" stroke-width="1" fill="none"/>
+                <ellipse cx="47" cy="30" rx="2.5" ry="10" fill="#c4b8a4" opacity=".2"/>
+                <path d="M47 105 C38 98,33 103,36 110" stroke="#c4b8a4" stroke-width=".8" fill="none"/>
+                <path d="M48 130 C57 124,62 129,59 135" stroke="#c4b8a4" stroke-width=".8" fill="none"/>
+            </svg>
+            <!-- Calla lily bottom-right -->
+            <svg class="deco calla-br" viewBox="0 0 100 160" fill="none">
+                <path d="M50 150 L52 75" stroke="#c4b8a4" stroke-width="1.3"/>
+                <path d="M52 75 C68 67,80 45,72 27 C66 14,52 11,46 20 C40 29,50 50,52 75Z" stroke="#c4b8a4" stroke-width="1" fill="none"/>
+                <ellipse cx="53" cy="35" rx="2.5" ry="10" fill="#c4b8a4" opacity=".2"/>
+                <path d="M53 110 C62 104,66 109,63 115" stroke="#c4b8a4" stroke-width=".8" fill="none"/>
+            </svg>
+            <!-- Squiggle top -->
+            <svg class="deco sq-hero" viewBox="0 0 220 25" fill="none"><path d="M0 12 Q27 2,55 12 Q82 22,110 12 Q137 2,165 12 Q192 22,220 12" stroke="#8fb3d1" stroke-width="1.2" fill="none" opacity=".25"/></svg>
+
+            <p class="hero-tag reveal">приглашение на свадьбу</p>
+
+            <div class="hero-photo reveal">
+                <img src="photos-combined.png" alt="Эльвина и Даниил" loading="eager">
+            </div>
+
+            <div class="hero-names-block reveal">
+                <svg class="name-line" viewBox="0 0 280 15" fill="none"><path d="M5 10 Q70 2,140 8 Q210 14,275 6" stroke="#8fb3d1" stroke-width="1" fill="none" opacity=".35"/></svg>
+                <h1>Эльвина <span>&</span> Даниил</h1>
+            </div>
+
+            <p class="hero-date reveal">— 16 июля 2025 —</p>
+
+            <div class="scroll-cue reveal" onclick="document.getElementById('greeting').scrollIntoView({behavior:'smooth'})" role="button" aria-label="Прокрутить вниз">
+                <span class="scroll-arrow">↓</span>
+            </div>
         </div>
     </section>
- 
-    <!-- ═══ GREETING ═══ -->
+
+    <!-- ═══════ GREETING ═══════ -->
     <section class="card card-cream" id="greeting">
-        <h2 class="card-title reveal">Дорогие друзья и родные!</h2>
-        <svg class="deco-squiggle sq-under-title" viewBox="0 0 150 15" fill="none"><path d="M0 8 Q37 0, 75 8 Q112 16, 150 8" stroke="#d4a0a0" stroke-width="1" fill="none" opacity=".4"/></svg>
+        <h2 class="sec-title reveal">Дорогие друзья<br>и родные!</h2>
+        <svg class="deco sq-small" viewBox="0 0 120 12" fill="none"><path d="M0 6 Q30 0,60 6 Q90 12,120 6" stroke="#d4a0a0" stroke-width=".8" fill="none" opacity=".35"/></svg>
         <p class="reveal">В нашей жизни предстоят счастливые перемены! Мы хотим, чтобы в этот день рядом с нами были самые близкие и дорогие для нас люди.</p>
         <p class="reveal">Будем рады разделить с вами чудесный праздник в день нашей свадьбы, которая состоится:</p>
         <div class="big-date reveal">16.07.2025</div>
     </section>
- 
-    <!-- ═══ PHOTOS ═══ -->
-    <section class="card card-cream" id="photos">
-        <div class="photo-collage reveal">
-            <div class="photo-pin"></div>
-            <img src="photos-combined.png" alt="Мы в детстве">
-        </div>
-        <p class="caption reveal"><em>Время пронеслось незаметно, и у этих двух милых детей скоро свадьба!</em></p>
-    </section>
- 
-    <!-- ═══ WHERE ═══ -->
+
+    <!-- ═══════ WHERE ═══════ -->
     <section class="card card-cream" id="where">
-        <h2 class="card-title title-handdrawn reveal">Где?</h2>
-        <div class="venue-block reveal">
-            <div class="venue-icon">🏛️</div>
-            <p class="venue-label">ЗАГС</p>
+        <h2 class="sec-title sec-title-big reveal">Где?</h2>
+        <div class="venue reveal">
+            <span class="venue-icon">💍</span>
+            <p class="venue-type">церемония · 13:00</p>
             <p class="venue-name">Особняк Спиридонова</p>
+            <a href="https://yandex.ru/maps/?text=Москва+особняк+Спиридонова" target="_blank" rel="noopener" class="btn-link">построить маршрут →</a>
         </div>
-        <div class="venue-block reveal">
-            <div class="venue-icon">🍽️</div>
-            <p class="venue-label">Банкет</p>
+        <div class="venue reveal">
+            <span class="venue-icon">🥂</span>
+            <p class="venue-type">банкет · 17:00</p>
             <p class="venue-name">Lauren Parker</p>
+            <a href="https://yandex.ru/maps/?text=Москва+Lauren+Parker+ресторан" target="_blank" rel="noopener" class="btn-link">построить маршрут →</a>
         </div>
     </section>
- 
-    <!-- ═══ SCHEDULE ═══ -->
+
+    <!-- ═══════ SCHEDULE ═══════ -->
     <section class="card card-cream" id="schedule">
-        <h2 class="card-title title-handdrawn reveal">Во сколько?</h2>
-        <div class="time-list">
-            <div class="time-row reveal">
-                <span class="time-val">13:15</span>
-                <span class="time-label">церемония<br><small>Особняк Спиридонова</small></span>
+        <h2 class="sec-title sec-title-big reveal">Во сколько?</h2>
+        <div class="timeline">
+            <div class="tl-item reveal">
+                <div class="tl-time">13:00</div>
+                <div class="tl-body">
+                    <strong>Церемония бракосочетания</strong>
+                    <span>Особняк Спиридонова</span>
+                </div>
             </div>
-            <div class="time-row reveal">
-                <span class="time-val">17:00</span>
-                <span class="time-label">банкет<br><small>Lauren Parker</small></span>
+            <div class="tl-item reveal">
+                <div class="tl-time">17:00</div>
+                <div class="tl-body">
+                    <strong>Начало банкета</strong>
+                    <span>Lauren Parker</span>
+                </div>
             </div>
         </div>
     </section>
- 
-    <!-- ═══ DRESSCODE (blue blob) ═══ -->
+
+    <!-- ═══════ WISHES ═══════ -->
+    <section class="card card-cream" id="wishes">
+        <h2 class="sec-title reveal">Пожелания</h2>
+        <svg class="deco sq-small" viewBox="0 0 120 12" fill="none"><path d="M0 6 Q30 0,60 6 Q90 12,120 6" stroke="#8fb3d1" stroke-width=".8" fill="none" opacity=".3"/></svg>
+        <div class="wish-item reveal">
+            <span class="wish-icon">💌</span>
+            <p>Свои тёплые слова и пожелания приносите в сердцах, а подарки — в конверте.</p>
+        </div>
+        <div class="wish-item reveal">
+            <span class="wish-icon">🌿</span>
+            <p>Просим не обременять себя выбором цветов. Ваше присутствие сделает этот день ярче любых букетов!</p>
+        </div>
+        <div class="wish-item reveal">
+            <span class="wish-icon">✨</span>
+            <p>Мы решили провести свадьбу без детей, чтобы этот день стал для вас лёгким и незабываемым. Благодарим за понимание!</p>
+        </div>
+    </section>
+
+    <!-- ═══════ DRESSCODE (blue) ═══════ -->
     <section class="card card-blue" id="dresscode">
-        <h2 class="card-title title-handdrawn reveal">Дресс-код</h2>
-        <p class="reveal">Нам будет очень приятно, если вы учтёте наши пожелания при выборе одежды.</p>
-        <div class="dress-sub reveal">
-            <p><strong>Женщинам</strong> — вечерние наряды пастельных и пыльных оттенков</p>
-            <div class="palette">
-                <span class="dot" style="--c:#d4a0a0"></span>
-                <span class="dot" style="--c:#b8a9c9"></span>
-                <span class="dot" style="--c:#a8ccb0"></span>
-                <span class="dot" style="--c:#a0c4d4"></span>
-                <span class="dot" style="--c:#3d5a80"></span>
-                <span class="dot" style="--c:#2d6a4f"></span>
-                <span class="dot" style="--c:#9a8c7c"></span>
-            </div>
-        </div>
-        <div class="dress-sub reveal">
-            <p><strong>Мужчинам</strong> — брюки (не джинсы) + рубашка или поло</p>
-        </div>
+        <h2 class="sec-title sec-title-big reveal">Дресс-код</h2>
+        <p class="reveal">В этот особенный день мы мечтаем о гармонии в деталях.</p>
+        <p class="reveal">Просим вас выбирать вечерние и нарядные образы в тёплой гамме.</p>
+        <p class="reveal">Чтобы платье невесты оставалось в центре внимания, избегайте белого, молочного и айвори. Также оставим за кадром кричащие неоновые цвета — они нарушат нашу уютную, но элегантную атмосферу.</p>
+        <p class="reveal">Мужчинам подойдут рубашка или поло и брюки, пиджак — по желанию.</p>
+        <p class="reveal">Спасибо, что помогаете нам создавать это событие!</p>
     </section>
- 
-    <!-- ═══ DETAILS (blue blob) ═══ -->
-    <section class="card card-blue" id="details">
-        <h2 class="card-title title-handdrawn reveal">Детали</h2>
-        <p class="reveal">Свои тёплые слова и пожелания приносите в сердцах, а подарки — в конверте.</p>
-        <p class="reveal">Просим не обременять себя выбором цветов. Ваше присутствие сделает этот день ярче любых букетов!</p>
-        <p class="reveal">Мы хотим, чтобы этот день стал для вас лёгким, приятным и незабываемым. Поэтому мы решили провести свадьбу без детей. Благодарим за ваше понимание и с нетерпением ждём встречи!</p>
-    </section>
- 
-    <!-- ═══ RSVP ═══ -->
+
+    <!-- ═══════ RSVP ═══════ -->
     <section class="card card-cream" id="rsvp">
-        <h2 class="card-title title-handdrawn reveal">Анкета гостя</h2>
-        <p class="reveal">Подтвердите, пожалуйста, своё присутствие на торжестве до <strong>1 июля 2025</strong></p>
+        <h2 class="sec-title reveal">Подтвердите присутствие</h2>
+        <svg class="deco sq-small" viewBox="0 0 120 12" fill="none"><path d="M0 6 Q30 0,60 6 Q90 12,120 6" stroke="#d4a0a0" stroke-width=".8" fill="none" opacity=".35"/></svg>
+        <p class="reveal">Пожалуйста, заполните анкету до <strong>1 июля 2025</strong></p>
         <div class="form-wrap reveal">
             <form id="rsvpForm" onsubmit="submitForm(event)">
                 <div class="fg">
-                    <label>Имя и фамилия</label>
-                    <input type="text" name="name" required placeholder="Иван Иванов">
+                    <label for="f-name">Имя и фамилия</label>
+                    <input id="f-name" type="text" name="name" required placeholder="Иван Иванов" autocomplete="name">
                 </div>
                 <div class="fg">
                     <label>Присутствие</label>
@@ -124,8 +163,8 @@
                     </div>
                 </div>
                 <div class="fg">
-                    <label>Еда</label>
-                    <select name="food">
+                    <label for="f-food">Предпочтения в еде</label>
+                    <select id="f-food" name="food">
                         <option>Нет ограничений</option>
                         <option>Вегетарианское</option>
                         <option>Веганское</option>
@@ -133,29 +172,29 @@
                     </select>
                 </div>
                 <div class="fg">
-                    <label>Напитки</label>
-                    <select name="drinks">
+                    <label for="f-drinks">Напитки</label>
+                    <select id="f-drinks" name="drinks">
                         <option>Пью всё</option>
                         <option>Только вино</option>
                         <option>Безалкогольные</option>
                     </select>
                 </div>
                 <div class="fg">
-                    <label>Комментарий</label>
-                    <textarea name="comments" placeholder="Что нам стоит знать..."></textarea>
+                    <label for="f-comment">Комментарий</label>
+                    <textarea id="f-comment" name="comments" placeholder="Аллергии, пожелания..."></textarea>
                 </div>
-                <button type="submit">заполнить анкету</button>
+                <button type="submit">Отправить</button>
             </form>
             <div class="ok-msg" id="formSuccess">
-                <h3>Спасибо! ♥</h3>
-                <p>Мы получили вашу анкету.</p>
+                <h3>Спасибо!</h3>
+                <p>Мы получили вашу анкету и с нетерпением ждём встречи.</p>
             </div>
         </div>
     </section>
- 
-    <!-- ═══ GOODBYE ═══ -->
+
+    <!-- ═══════ COUNTDOWN + BYE ═══════ -->
     <section class="card card-cream bye-card" id="footer">
-        <div class="countdown reveal">
+        <div class="countdown reveal" aria-label="Обратный отсчёт до свадьбы">
             <div class="cd"><span id="days">00</span><small>дней</small></div>
             <div class="cd-sep">:</div>
             <div class="cd"><span id="hours">00</span><small>часов</small></div>
@@ -164,16 +203,15 @@
             <div class="cd-sep">:</div>
             <div class="cd"><span id="seconds">00</span><small>секунд</small></div>
         </div>
-        <h2 class="card-title title-handdrawn reveal">Мы будем счастливы видеть вас на нашем торжестве!</h2>
+        <div class="thin-line"></div>
+        <h2 class="sec-title reveal">Мы будем счастливы<br>видеть вас на нашем<br>торжестве!</h2>
         <p class="bye-sign reveal">с любовью, Эльвина и Даниил</p>
         <div class="bye-heart reveal">♥</div>
-        <!-- Small doodles -->
-        <svg class="deco-squiggle sq-bye" viewBox="0 0 200 30" fill="none"><path d="M0 15 Q25 5, 50 15 Q75 25, 100 15 Q125 5, 150 15 Q175 25, 200 15" stroke="#d4a0a0" stroke-width="1" fill="none" opacity=".25"/></svg>
+        <svg class="deco sq-bye" viewBox="0 0 180 20" fill="none"><path d="M0 10 Q22 2,45 10 Q67 18,90 10 Q112 2,135 10 Q157 18,180 10" stroke="#d4a0a0" stroke-width=".8" fill="none" opacity=".2"/></svg>
     </section>
- 
+
 </div>
- 
+
 <script src="script.js"></script>
 </body>
 </html>
- 
