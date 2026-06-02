@@ -103,7 +103,7 @@ sections.forEach(s => dotObs.observe(s.el));
         return grid;
     }
 
-    const pageH = Math.max(document.body.scrollHeight, 8000);
+    const pageH = window.innerHeight;
 
     const vw = window.innerWidth;
     const cols = 2;
@@ -140,16 +140,12 @@ sections.forEach(s => dotObs.observe(s.el));
         container.appendChild(img);
     }
 
-    // Высота мозаики = высота контента (пересчёт после загрузки)
-    container.style.height = pageH + 'px';
-    window.addEventListener('load', () => {
-        container.style.height = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight) + 'px';
-    });
+    container.style.height = '100%';
 })();
 
 // ===== FORM (Google Sheets) =====
 // ⚠️ ВСТАВЬ URL GOOGLE APPS SCRIPT
-const GOOGLE_SCRIPT_URL = 'ВСТАВЬ_СЮДА_URL';
+const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyHmYA0reE213caYIDAfrYRbPPaZMPqRXctjvIKTFI1SfaL-aKM4vHwv9ZjMIosQ9qG/exec';
 
 function submitForm(e) {
     e.preventDefault();
