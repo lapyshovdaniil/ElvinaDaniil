@@ -163,6 +163,7 @@ body{
     font-weight:200;font-size:.6rem;
     letter-spacing:5px;text-transform:uppercase;
     color:#f0e4d4;margin-bottom:.4rem;
+    color:#f0e4d4 !important;margin-bottom:.4rem;
     position:relative;z-index:2;
 }
 
@@ -186,6 +187,7 @@ body{
     font-family:'Times New Roman',Times,serif;
     font-size:1.25rem;font-weight:500;
     color:#f0e4d4;letter-spacing:3px;
+    color:#f0e4d4 !important;letter-spacing:3px;
     position:relative;z-index:2;
     text-shadow:0 1px 8px rgba(0,0,0,.3);
 }
