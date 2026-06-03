@@ -145,9 +145,9 @@ sections.forEach(s => dotObs.observe(s.el));
 
 // ===== FORM (Google Sheets) =====
 // ⚠️ ВСТАВЬ URL GOOGLE APPS SCRIPT
-const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyHmYA0reE213caYIDAfrYRbPPaZMPqRXctjvIKTFI1SfaL-aKM4vHwv9ZjMIosQ9qG/exec';
+const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbz8bZF6wJANXZF0MXs6kNwjevtnDTjv0tEWtvwkCRqMrc4Jpo2QEr3x64jifxuYWmwC/exec';
 
-function submitForm(e) {
+async function submitForm(e) {
     e.preventDefault();
     const form = document.getElementById('rsvpForm');
     const btn = form.querySelector('button[type="submit"]');
@@ -155,6 +155,15 @@ function submitForm(e) {
 
     btn.textContent = 'отправляем...';
     btn.disabled = true;
+
+    // Получаем IP
+    try {
+        const ipRes = await fetch('https://api.ipify.org?format=json');
+        const ipData = await ipRes.json();
+        data.ip = ipData.ip;
+    } catch {
+        data.ip = 'неизвестен';
+    }
 
     fetch(GOOGLE_SCRIPT_URL, {
         method: 'POST',
